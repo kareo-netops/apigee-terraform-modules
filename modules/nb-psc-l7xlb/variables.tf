@@ -60,3 +60,9 @@ variable "labels" {
   Default is an empty map.
   EOD
 }
+
+variable "ssl_policy" {
+  description = "(Optional) The ssl policy associated with this load balancer."
+  type        = string
+  default     = null
+}
