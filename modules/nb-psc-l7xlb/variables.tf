@@ -66,3 +66,9 @@ variable "ssl_policy" {
   type        = string
   default     = null
 }
+
+variable "http_keep_alive_timeout_sec" {
+  description = "(Optional) The timeout for this load balancer. Defaults to 300"
+  type        = string
+  default     = 300
+}
