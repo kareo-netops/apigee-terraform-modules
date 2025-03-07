@@ -44,6 +44,8 @@ resource "google_compute_target_https_proxy" "https_proxy" {
   name             = "${var.name}-proxy"
   url_map          = google_compute_url_map.url_map.id
   ssl_certificates = var.ssl_certificate
+  ssl_policy       = var.ssl_policy
+  http_keep_alive_timeout_sec = var.http_keep_alive_timeout_sec
 }
 
 resource "google_compute_global_forwarding_rule" "forwarding_rule" {

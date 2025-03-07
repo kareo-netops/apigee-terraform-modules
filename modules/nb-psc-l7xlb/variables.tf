@@ -60,3 +60,15 @@ variable "labels" {
   Default is an empty map.
   EOD
 }
+
+variable "ssl_policy" {
+  description = "(Optional) The ssl policy associated with this load balancer."
+  type        = string
+  default     = null
+}
+
+variable "http_keep_alive_timeout_sec" {
+  description = "(Optional) The timeout for this load balancer. Defaults to 300"
+  type        = string
+  default     = 300
+}
