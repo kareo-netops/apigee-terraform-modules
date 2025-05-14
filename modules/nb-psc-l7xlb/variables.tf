@@ -72,3 +72,9 @@ variable "http_keep_alive_timeout_sec" {
   type        = string
   default     = 300
 }
+
+variable "connection_draining_timeout_sec" {
+  description = "(Optional) Time for which instance will be drained (not accept new connections, but still work to finish started)."
+  type        = string
+  default     = 300
+}
