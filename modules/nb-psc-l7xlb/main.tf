@@ -15,13 +15,15 @@
  */
 
 resource "google_compute_backend_service" "psc_backend" {
-  project               = var.project_id
-  name                  = "${var.name}-backend"
-  port_name             = "https"
-  protocol              = "HTTPS"
-  load_balancing_scheme = "EXTERNAL_MANAGED"
-  security_policy       = var.security_policy
-  edge_security_policy  = var.edge_security_policy
+  project                         = var.project_id
+  name                            = "${var.name}-backend"
+  port_name                       = "http"
+  protocol                        = "HTTPS"
+  load_balancing_scheme           = "EXTERNAL_MANAGED"
+  locality_lb_policy              = var.locality_lb_policy
+  security_policy                 = var.security_policy
+  edge_security_policy            = var.edge_security_policy
+  connection_draining_timeout_sec = var.connection_draining_timeout_sec
   dynamic "backend" {
     for_each = var.psc_negs
     content {
